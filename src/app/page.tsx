@@ -32,6 +32,13 @@ export default function Home() {
   const [allHidden, setAllHidden] = useState(false);
   const prevState = useRef(timeState);
 
+  // Set initial body styles on mount
+  useEffect(() => {
+    document.body.style.backgroundColor = bgColors[timeState];
+    document.body.style.color = textColors[timeState];
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   useEffect(() => {
     if (timeState === prevState.current) return;
     prevState.current = timeState;
