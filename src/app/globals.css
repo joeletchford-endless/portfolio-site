@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "ABC Favorit";
+  src: url("/ABCFavoritVariable-Trial.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+body {
+  margin: 0;
+  padding: 25px;
+  font-family: "ABC Favorit", sans-serif;
+  font-variation-settings: "wght" 350;
+  line-height: 1.2;
+  transition: background-color 700ms ease-in, color 700ms ease-in;
+}
+
+.svg-mask {
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  transition: background-color 700ms ease-in, opacity 700ms ease-in;
+}
+
+.svg-mask-contain {
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  transition: background-color 700ms ease-in, opacity 700ms ease-in;
+}
+
+ul:not(.no-circles) li::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+}
