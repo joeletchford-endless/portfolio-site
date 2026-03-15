@@ -1,0 +1,188 @@
+{
+  "name": "Joe Letchford",
+  "title": "Art Director & Visual Designer",
+  "bio": "Joe Letchford is an Art Director & Visual Designer with 8+ years of experience in brand development and visual design, specializing in art, tech, education, & advertising sectors. Proficient in Figma and Adobe Suite, with a keen eye for identity and interactive design. Passionate about crafting compelling visual narratives and eager to drive impactful design solutions for clients.",
+  "skills": ["Figma", "Adobe Suite", "Brand Development", "Visual Design", "Identity Design", "Interactive Design"],
+  "links": {
+    "linkedin": "https://www.linkedin.com/in/joe-l-0b03586b/"
+  },
+  "projects": [
+    {
+      "title": "Dispatches Magazine",
+      "slug": "dispatches",
+      "url": "https://dispatchesmag.com/",
+      "description": "In charge of Design & Creative Guidance at Dispatches Magazine for almost four years. My responsibilities encompass all aspects like design, development, and illustrator procurement. Each edition amplifies the design aesthetics from the last, while preserving the original spirit of the magazine.",
+      "images": [
+        "/projects/dispatches/01.jpg",
+        "/projects/dispatches/02.png",
+        "/projects/dispatches/03.png",
+        "/projects/dispatches/04.png",
+        "/projects/dispatches/05.png",
+        "/projects/dispatches/06.png",
+        "/projects/dispatches/07.png",
+        "/projects/dispatches/08.png",
+        "/projects/dispatches/09.png",
+        "/projects/dispatches/10.png",
+        "/projects/dispatches/11.png",
+        "/projects/dispatches/12.png",
+        "/projects/dispatches/13.png",
+        "/projects/dispatches/14.png",
+        "/projects/dispatches/15.png",
+        "/projects/dispatches/16.png",
+        "/projects/dispatches/17.png",
+        "/projects/dispatches/18.png",
+        "/projects/dispatches/19.png"
+      ]
+    },
+    {
+      "title": "Google All-In",
+      "slug": "google-all-in",
+      "url": "https://all-in.withgoogle.com/",
+      "description": "Website development and creative direction for Google's comprehensive marketing campaign. We assisted in the rejuvenation of the All-In brand and its landing page. In close conjunction with Google Brand Studio and their internal development crew, we surmounted issues presented by a dated codebase, rendering a visually captivating, imaginative design within a four month timeframe. The end result didn't just reinvigorate Google's web marketing persona, but also unveiled a fun, progressive style.",
+      "images": [
+        "/projects/google-all-in/01.webp",
+        "/projects/google-all-in/02.webp",
+        "/projects/google-all-in/03.webp",
+        "/projects/google-all-in/04.webp",
+        "/projects/google-all-in/05.webp",
+        "/projects/google-all-in/06.webp",
+        "/projects/google-all-in/07.webp"
+      ]
+    },
+    {
+      "title": "Margaret Lee Coaching",
+      "slug": "margaret-lee",
+      "url": "https://margaretleecoaching.com/",
+      "description": "Overseeing design and art direction, led the brand identity and web creation for Margaret Lee, an individual career consultant with a focus on inventive guidance. Our ambition was to establish a unique brand and online presence that distinguishes her from her rivals. Collaborating with our internal development crew, we integrated advanced design facets, culminating in an elegant final result.",
+      "images": [
+        "/projects/margaret-lee/01.webp",
+        "/projects/margaret-lee/02.webp",
+        "/projects/margaret-lee/03.webp",
+        "/projects/margaret-lee/04.png",
+        "/projects/margaret-lee/05.png",
+        "/projects/margaret-lee/06.png",
+        "/projects/margaret-lee/07.png",
+        "/projects/margaret-lee/08.png",
+        "/projects/margaret-lee/09.png",
+        "/projects/margaret-lee/10.png",
+        "/projects/margaret-lee/11.png",
+        "/projects/margaret-lee/12.png"
+      ]
+    },
+    {
+      "title": "Bible Camp Film Chapters",
+      "slug": "bible-camp",
+      "url": "https://www.imdb.com/title/tt30216208/",
+      "description": "Film Typography for the short film Bible Camp, a short film about young Korean immigrants who assimilate to American traditions while attending a discount daycare in the Harlem Valley. Each chapter was a line from the Lords Prayer, so I searched for the oldest non-blackletter print and recreated the layout to superimpose on top of the film. The layout was then dictated by where the type showed up in the verse.",
+      "images": [
+        "/projects/bible-camp/01.gif",
+        "/projects/bible-camp/02.png",
+        "/projects/bible-camp/03.png",
+        "/projects/bible-camp/04.png",
+        "/projects/bible-camp/05.png",
+        "/projects/bible-camp/06.png",
+        "/projects/bible-camp/07.png",
+        "/projects/bible-camp/08.png",
+        "/projects/bible-camp/09.png"
+      ]
+    },
+    {
+      "title": "YUMI Brand Refresh",
+      "slug": "yumi",
+      "url": null,
+      "description": "Worked with a tight team to help revamp Yumi's brand. We updated the color and employed unconventional, playful typography to communicate energy and optimism to a wider audience. In support of the more lively brand, we also reinvented the playful YUMI \"letter jumble\" with careful consideration for bold color combinations paired with high emotion, family-centric photography.",
+      "images": [
+        "/projects/yumi/01.png",
+        "/projects/yumi/02.webp",
+        "/projects/yumi/03.webp",
+        "/projects/yumi/04.webp",
+        "/projects/yumi/05.webp",
+        "/projects/yumi/06.webp",
+        "/projects/yumi/07.webp",
+        "/projects/yumi/08.webp",
+        "/projects/yumi/09.webp",
+        "/projects/yumi/10.webp"
+      ]
+    },
+    {
+      "title": "Iron Health",
+      "slug": "iron-health",
+      "url": "https://www.ironhealth.io/",
+      "description": "Web Designer leading the web development for Iron Health, a tech-enabled, virtual platform that partners with OB/GYNs to provide a network of multidisciplinary providers, bridging gaps across the healthcare journey.",
+      "images": [
+        "/projects/iron-health/01.png",
+        "/projects/iron-health/02.png",
+        "/projects/iron-health/03.png",
+        "/projects/iron-health/04.png",
+        "/projects/iron-health/05.png",
+        "/projects/iron-health/06.png",
+        "/projects/iron-health/07.png",
+        "/projects/iron-health/08.png",
+        "/projects/iron-health/09.png",
+        "/projects/iron-health/10.png"
+      ]
+    },
+    {
+      "title": "Jerry Ross Barrish Exhibition Catalogue",
+      "slug": "jerry-ross-barrish",
+      "url": null,
+      "description": "Exhibition Design & Art Direction for the inaugural event at M. Stark Gallery in Half Moon Bay, CA. This included signage, branding, and an exhibition catalogue.",
+      "images": [
+        "/projects/jerry-ross-barrish/01.webp",
+        "/projects/jerry-ross-barrish/02.webp",
+        "/projects/jerry-ross-barrish/03.webp",
+        "/projects/jerry-ross-barrish/04.webp",
+        "/projects/jerry-ross-barrish/05.webp",
+        "/projects/jerry-ross-barrish/06.webp"
+      ]
+    },
+    {
+      "title": "Dropbox 99+ Intranet",
+      "slug": "dropbox-intranet",
+      "url": null,
+      "description": "Design Lead for the redesigned and developed Dropbox Intranet. As a critical internal communication hub, this project was prioritized and accelerated during COVID-19. My role as the designer involved overseeing the entire redesign process, from initial concept development to final implementation. I worked closely with a cross-functional team of designers, developers, and subject matter experts to ensure the Intranet effectively met the evolving needs of Dropbox employees.",
+      "images": [
+        "/projects/dropbox-intranet/01.webp",
+        "/projects/dropbox-intranet/02.webp",
+        "/projects/dropbox-intranet/03.webp",
+        "/projects/dropbox-intranet/04.webp",
+        "/projects/dropbox-intranet/05.webp"
+      ]
+    },
+    {
+      "title": "Dropbox Illustrations",
+      "slug": "dropbox-illustrations",
+      "url": null,
+      "description": "As part of the ongoing Dropbox Intranet project, I took on the role of illustrator for internal communication posts. Despite not having a formal background in illustration, I found this to be a rewarding and challenging experience.",
+      "images": [
+        "/projects/dropbox-illustrations/01.webp",
+        "/projects/dropbox-illustrations/02.webp",
+        "/projects/dropbox-illustrations/03.webp",
+        "/projects/dropbox-illustrations/04.webp",
+        "/projects/dropbox-illustrations/05.webp",
+        "/projects/dropbox-illustrations/06.webp",
+        "/projects/dropbox-illustrations/07.webp",
+        "/projects/dropbox-illustrations/08.webp",
+        "/projects/dropbox-illustrations/09.webp",
+        "/projects/dropbox-illustrations/10.webp"
+      ]
+    },
+    {
+      "title": "About.google",
+      "slug": "about-google",
+      "url": "https://about.google/",
+      "description": "Web Designer on a covert team within Google Brand Studio, tasked with redesigning and developing new guidelines for their editorial platform and marketing web standards. At the time, Google Marketing faced limitations in publishing content, relying heavily on external developers. Our team aimed to address this issue by creating a unified marketing web presence that empowered internal teams to produce unique content efficiently.",
+      "images": [
+        "/projects/about-google/01.png",
+        "/projects/about-google/02.png",
+        "/projects/about-google/03.png",
+        "/projects/about-google/04.png",
+        "/projects/about-google/05.png",
+        "/projects/about-google/06.png",
+        "/projects/about-google/07.png",
+        "/projects/about-google/08.png",
+        "/projects/about-google/09.png"
+      ]
+    }
+  ]
+}
