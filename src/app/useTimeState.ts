@@ -1,10 +1,8 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 export type TimeState = "day" | "dusk" | "night" | "dawn";
-
-const states: TimeState[] = ["day", "dusk", "night", "dawn"];
 
 function getTimeState(date: Date): TimeState {
   const hour = parseInt(
@@ -15,10 +13,14 @@ function getTimeState(date: Date): TimeState {
     })
   );
 
-  if (hour >= 8 && hour < 17) return "day";
-  if (hour >= 17 && hour < 22) return "dusk";
-  if (hour >= 22 || hour < 4) return "night";
-  return "dawn";
+  // Dawn  06:00–09:00
+  // Day   09:00–17:00
+  // Dusk  17:00–20:00
+  // Night 20:00–06:00
+  if (hour >= 6 && hour < 9)  return "dawn";
+  if (hour >= 9 && hour < 17) return "day";
+  if (hour >= 17 && hour < 20) return "dusk";
+  return "night";
 }
 
 function getFormattedTime(date: Date): string {
@@ -33,14 +35,13 @@ function getFormattedTime(date: Date): string {
 }
 
 export function useTimeState() {
-  const override = useRef<TimeState | null>(null);
   const [timeState, setTimeState] = useState<TimeState>(() => getTimeState(new Date()));
   const [formattedTime, setFormattedTime] = useState("");
 
   useEffect(() => {
     function update() {
       const now = new Date();
-      if (!override.current) setTimeState(getTimeState(now));
+      setTimeState(getTimeState(now));
       setFormattedTime(getFormattedTime(now));
     }
 
@@ -49,13 +50,5 @@ export function useTimeState() {
     return () => clearInterval(interval);
   }, []);
 
-  const cycleState = useCallback(() => {
-    const current = override.current ?? timeState;
-    const idx = states.indexOf(current);
-    const next = states[(idx + 1) % states.length];
-    override.current = next;
-    setTimeState(next);
-  }, [timeState]);
-
-  return { timeState, formattedTime, cycleState };
+  return { timeState, formattedTime };
 }

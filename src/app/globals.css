@@ -7,13 +7,52 @@
   font-display: swap;
 }
 
+html {
+  font-size: calc(16px * var(--font-scale, 1));
+}
+
 body {
   margin: 0;
-  padding: 25px;
+  padding: 16px;
   font-family: "ABC Favorit", sans-serif;
   font-variation-settings: "wght" 350;
   line-height: 1.2;
   transition: background-color 700ms ease-in, color 700ms ease-in;
+}
+
+@media (min-width: 768px) {
+  body { padding: 20px; }
+}
+
+@media (min-width: 1024px) {
+  body { padding: 25px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body { transition: none; }
+  .svg-mask, .svg-mask-contain { transition: none; }
+}
+
+html.reduce-motion * {
+  transition: none !important;
+  animation: none !important;
+}
+
+html.high-contrast {
+  filter: contrast(150%);
+}
+
+body.contrast-inverted {
+  filter: invert(100%);
+}
+
+/* Lightbox counter-filters — restore original appearance inside filtered page modes.
+   Child filter applied first, then parent filter: invert×invert = identity, contrast(0.667)×contrast(1.5) ≈ 1.0 */
+html.high-contrast [data-lightbox-restore] {
+  filter: contrast(0.667);
+}
+body.contrast-inverted [data-lightbox-restore] {
+  filter: invert(100%);
 }
 
 .svg-mask {
@@ -43,4 +82,35 @@ ul:not(.no-circles) li::before {
   border-radius: 50%;
   margin-right: 6px;
   vertical-align: middle;
+}
+
+/* Filmstrip (List mode) — fixed-width items that scroll horizontally */
+/* Use vw-based flex-basis to avoid circular dependency in overflow-x:auto flex containers */
+.filmstrip-item {
+  flex: 0 0 45vw;        /* mobile: ~2 visible (body padding 16px each side) */
+}
+@media (min-width: 640px) {
+  .filmstrip-item {
+    flex: 0 0 calc((100vw - 40px - 3 * 12px) / 4);  /* tablet: 4 visible (20px padding each side) */
+  }
+}
+@media (min-width: 1024px) {
+  .filmstrip-item {
+    flex: 0 0 calc((100vw - 50px - 7 * 12px) / 8);  /* desktop: 8 visible (25px padding each side) */
+  }
+}
+
+/* Greyscale mode — per-image filter so hover can reveal full colour */
+body.greyscale-images img:not([data-no-greyscale]) {
+  filter: grayscale(100%);
+  transition: filter 350ms ease;
+}
+body.greyscale-images img:not([data-no-greyscale]):hover {
+  filter: none;
+}
+
+/* Dev outline mode — Chrome DevTools-style element inspection */
+.dev-outline *:not([data-dev-overlay] *):not([data-dev-overlay]) {
+  outline: 1px solid rgba(66, 133, 244, 0.75) !important;
+  outline-offset: 0;
 }
