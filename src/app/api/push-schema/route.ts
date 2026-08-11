@@ -9,6 +9,7 @@ export async function GET(req: NextRequest) {
     return Response.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
+  process.env.PAYLOAD_FORCE_DRIZZLE_PUSH = 'true'
   const payload = await getPayload({ config })
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   await pushDevSchema(payload.db as any)
