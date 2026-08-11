@@ -1,6 +1,3 @@
-import { getPayload } from 'payload'
-import { pushDevSchema } from '@payloadcms/drizzle'
-import config from '@payload-config'
 import { type NextRequest } from 'next/server'
 
 export async function GET(req: NextRequest) {
@@ -9,10 +6,5 @@ export async function GET(req: NextRequest) {
     return Response.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
-  process.env.PAYLOAD_FORCE_DRIZZLE_PUSH = 'true'
-  const payload = await getPayload({ config })
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  await pushDevSchema(payload.db as any)
-
-  return Response.json({ ok: true })
+  return Response.json({ databaseUrl: process.env.DATABASE_URL })
 }
