@@ -8,7 +8,9 @@ type Args = {
   children: React.ReactNode
 }
 
-const serverFunction = async function (args: Parameters<typeof handleServerFunctions>[0]) {
+const serverFunction = async function (
+  args: Omit<Parameters<typeof handleServerFunctions>[0], 'config' | 'importMap'>,
+) {
   'use server'
   return handleServerFunctions({ ...args, config, importMap })
 }
