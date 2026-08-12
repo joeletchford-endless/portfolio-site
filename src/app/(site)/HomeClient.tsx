@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { type ContrastMode } from "../A11yBar";
 import DevOutlineOverlay from "../DevOutlineOverlay";
 import Lightbox from "../Lightbox";
@@ -301,9 +302,14 @@ export default function HomeClient({ projects, employment }: { projects: Project
                     className="cursor-pointer filmstrip-item"
                     onClick={() => openLightbox(project.images, idx)}
                   >
-                    <div className="aspect-video overflow-hidden">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={src} alt="" className="w-full h-full object-cover" />
+                    <div className="relative aspect-video overflow-hidden">
+                      <Image
+                        src={src}
+                        alt=""
+                        fill
+                        sizes="(max-width: 640px) 45vw, (max-width: 1024px) 22vw, 12vw"
+                        className="object-cover"
+                      />
                     </div>
                     {altTextOn && (
                       <div style={{ fontFamily: "monospace", fontSize: "0.6875rem", opacity: 0.5, marginTop: "3px" }}>
@@ -321,9 +327,14 @@ export default function HomeClient({ projects, employment }: { projects: Project
                     className="cursor-pointer"
                     onClick={() => openLightbox(project.images, idx)}
                   >
-                    <div className="aspect-video overflow-hidden">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={src} alt="" className="w-full h-full object-cover" />
+                    <div className="relative aspect-video overflow-hidden">
+                      <Image
+                        src={src}
+                        alt=""
+                        fill
+                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 15vw"
+                        className="object-cover"
+                      />
                     </div>
                     {altTextOn && (
                       <div style={{ fontFamily: "monospace", fontSize: "0.6875rem", opacity: 0.5, marginTop: "3px" }}>
