@@ -49,6 +49,7 @@ export default function HomeClient({ projects, employment }: { projects: Project
   const [displayState, setDisplayState] = useState<TimeState>(timeState);
   const [allHidden, setAllHidden] = useState(false);
   const prevState = useRef(timeState);
+  const hasMounted = useRef(false);
 
   const [layoutMode, setLayoutMode] = useState(1);
   const [sizeMode, setSizeMode] = useState(2);
@@ -116,13 +117,17 @@ export default function HomeClient({ projects, employment }: { projects: Project
   }, [timeState]);
 
   useEffect(() => {
-    document.body.style.backgroundColor = bgColors[timeState];
-    document.body.style.color = textColors[timeState];
-    document.documentElement.style.setProperty("--page-bg", bgColors[timeState] || "white");
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    if (!hasMounted.current) {
+      // Correct any stale initial state (e.g. from a prerendered snapshot) without animating.
+      hasMounted.current = true;
+      prevState.current = timeState;
+      setDisplayState(timeState);
+      document.body.style.backgroundColor = bgColors[timeState];
+      document.body.style.color = textColors[timeState];
+      document.documentElement.style.setProperty("--page-bg", bgColors[timeState] || "white");
+      return;
+    }
 
-  useEffect(() => {
     if (timeState === prevState.current) return;
     prevState.current = timeState;
 
@@ -142,9 +147,6 @@ export default function HomeClient({ projects, employment }: { projects: Project
     return () => { clearTimeout(t1); clearTimeout(t2); };
   }, [timeState]);
 
-  if (typeof window !== "undefined") {
-    console.log("[debug]", { timeState, displayState, allHidden, now: new Date().toString() });
-  }
   const colors = svgColors[displayState];
   const imageGridCols = gridColsClass[sizeMode] ?? "grid-cols-4";
 
