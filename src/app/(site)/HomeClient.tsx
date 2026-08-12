@@ -142,6 +142,9 @@ export default function HomeClient({ projects, employment }: { projects: Project
     return () => { clearTimeout(t1); clearTimeout(t2); };
   }, [timeState]);
 
+  if (typeof window !== "undefined") {
+    console.log("[debug]", { timeState, displayState, allHidden, now: new Date().toString() });
+  }
   const colors = svgColors[displayState];
   const imageGridCols = gridColsClass[sizeMode] ?? "grid-cols-4";
 
