@@ -208,9 +208,9 @@ export default function HomeClient({ projects, employment }: { projects: Project
 
           <ul className="col-span-1 text-base list-none p-0 no-circles pointer-events-auto">
             <li className="flex items-center gap-1 cursor-pointer">
-              <button aria-label="Decrease text size" onClick={() => setTextScale(parseFloat(Math.max(0.8, textScale - 0.1).toFixed(2)))}>−</button>
+              <button className="active:scale-90 transition-transform duration-100" aria-label="Decrease text size" onClick={() => setTextScale(parseFloat(Math.max(0.8, textScale - 0.1).toFixed(2)))}>−</button>
               <span>{Math.round(textScale * 100)}%</span>
-              <button aria-label="Increase text size" onClick={() => setTextScale(parseFloat(Math.min(1.6, textScale + 0.1).toFixed(2)))}>+</button>
+              <button className="active:scale-90 transition-transform duration-100" aria-label="Increase text size" onClick={() => setTextScale(parseFloat(Math.min(1.6, textScale + 0.1).toFixed(2)))}>+</button>
             </li>
           </ul>
 
@@ -286,7 +286,7 @@ export default function HomeClient({ projects, employment }: { projects: Project
                     href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="opacity-60 hover:opacity-100 transition-opacity"
+                    className="inline-block opacity-60 hover:opacity-100 active:scale-95 transition-[opacity,transform] duration-100"
                   >
                     View →
                   </a>
@@ -302,7 +302,7 @@ export default function HomeClient({ projects, employment }: { projects: Project
                     className="cursor-pointer filmstrip-item"
                     onClick={() => openLightbox(project.images, idx)}
                   >
-                    <div className="relative aspect-video overflow-hidden">
+                    <div className="relative aspect-video overflow-hidden active:scale-[0.97] transition-transform duration-100">
                       <Image
                         src={src}
                         alt=""
@@ -327,7 +327,7 @@ export default function HomeClient({ projects, employment }: { projects: Project
                     className="cursor-pointer"
                     onClick={() => openLightbox(project.images, idx)}
                   >
-                    <div className="relative aspect-video overflow-hidden">
+                    <div className="relative aspect-video overflow-hidden active:scale-[0.97] transition-transform duration-100">
                       <Image
                         src={src}
                         alt=""
