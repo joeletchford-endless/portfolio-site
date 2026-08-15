@@ -6,6 +6,7 @@ import { type ContrastMode } from "../A11yBar";
 import DevOutlineOverlay from "../DevOutlineOverlay";
 import Lightbox from "../Lightbox";
 import RichmondClock from "../RichmondClock";
+import StickyControls from "../StickyControls";
 import ToggleList from "../ToggleList";
 import { useTimeState, type TimeState } from "../useTimeState";
 
@@ -158,6 +159,23 @@ export default function HomeClient({ projects, employment }: { projects: Project
         <DevOutlineOverlay trigger={`${layoutMode}-${sizeMode}`} />
       )}
 
+      <StickyControls
+        textScale={textScale}
+        setTextScale={setTextScale}
+        contrastMode={contrastMode}
+        setContrastMode={setContrastMode}
+        altTextOn={altTextOn}
+        setAltTextOn={setAltTextOn}
+        outlinesOn={outlinesOn}
+        setOutlinesOn={setOutlinesOn}
+        motionReduced={motionReduced}
+        setMotionReduced={setMotionReduced}
+        layoutMode={layoutMode}
+        setLayoutMode={setLayoutMode}
+        sizeMode={sizeMode}
+        setSizeMode={setSizeMode}
+      />
+
       {/* ── Mobile / tablet bio (above hero, hidden on desktop) ── */}
       <p className="lg:hidden text-base mb-4">
         Joe Letchford is a visual designer with 9 years experience specializing
@@ -276,6 +294,9 @@ export default function HomeClient({ projects, employment }: { projects: Project
       <main>
         {projects.map((project) => (
           <section key={project.slug} className="mt-8 lg:mt-16">
+            {/* Fixed 12-col header, independent of sizeMode/layoutMode so it never
+                restructures when those change (Large's 2-col image grid doesn't have
+                enough columns to line up 4 distinct header fields against). */}
             <div className="grid grid-cols-12 gap-[12px] mb-4 text-base">
               <h2 className="col-span-8 lg:col-span-4">{project.title}</h2>
               <span className="hidden lg:block col-span-4 opacity-60">Project Category</span>
