@@ -109,6 +109,38 @@ body.greyscale-images img:not([data-no-greyscale]):hover {
   filter: none;
 }
 
+/* Toggle/radio dot — ring is static, inner fill materializes on select.
+   Critically damped (no overshoot): this is a menu-style state change with
+   no gesture momentum behind it, so it settles rather than bounces. */
+.toggle-dot-ring {
+  position: relative;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+  border: 1px solid currentColor;
+  flex-shrink: 0;
+}
+.toggle-dot-fill {
+  position: absolute;
+  inset: 2px;
+  border-radius: 9999px;
+  background-color: currentColor;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1), opacity 150ms ease-out;
+}
+.toggle-dot-fill[data-selected="true"] {
+  transform: scale(1);
+  opacity: 1;
+}
+/* Hint the outcome before commit — hovering an unselected option previews the fill */
+.toggle-dot-ring:hover .toggle-dot-fill:not([data-selected="true"]) {
+  transform: scale(0.45);
+  opacity: 0.4;
+  transition: transform 150ms ease-out, opacity 150ms ease-out;
+}
+
 /* Dev outline mode — Chrome DevTools-style element inspection */
 .dev-outline *:not([data-dev-overlay] *):not([data-dev-overlay]) {
   outline: 1px solid rgba(66, 133, 244, 0.75) !important;

@@ -46,14 +46,13 @@ export default function ToggleList({
           role="radio"
           aria-checked={selected === i}
           tabIndex={disabled ? -1 : 0}
-          className="cursor-pointer pointer-events-auto flex items-center gap-1.5 active:scale-95 transition-transform duration-100"
+          className="cursor-pointer pointer-events-auto flex items-center gap-1.5 active:scale-95 transition-transform duration-100 ease-out"
           onClick={() => handleClick(i)}
           onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); handleClick(i); } }}
         >
-          <span
-            className="inline-block w-[10px] h-[10px] rounded-full border border-current shrink-0 transition-[background-color] duration-150"
-            style={selected === i ? { backgroundColor: "currentColor" } : undefined}
-          />
+          <span className="toggle-dot-ring">
+            <span className="toggle-dot-fill" data-selected={selected === i} />
+          </span>
           {item}
         </li>
       ))}
